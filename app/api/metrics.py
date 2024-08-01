@@ -41,7 +41,7 @@ def get_all_metrics():
         try:
             r_info = requests.post(config["FULLNODE_INFO_URL"], json=json_info).json()
         except Exception as e:
-            r_info = "v999.999.999"
+            r_info = {"result":{"vmVersions":{"platform":"v999.999.999"}}}
         avalanchego_version = r_info["result"]["vmVersions"]["platform"]
         response['avalanchego_version'] = avalanchego_version
     
